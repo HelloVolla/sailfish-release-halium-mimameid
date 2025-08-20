@@ -1,3 +1,3 @@
 # Sailfish on mimameid
 
-Release build CI
+Release build CI for Volla Phone 22
