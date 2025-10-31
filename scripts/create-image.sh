@@ -40,11 +40,11 @@ done
 [ -z "$DEVICE" ] && (echo "Device has to be specified with DEVICE= env" && exit -1)
 [ -z "$RELEASE" ] && (echo "Release has to be specified with --release option" && exit -1)
 
-RELEASEMAJMIN=${RELEASE:0:3}
+RELEASEMAJMIN=$(echo $RELEASE | cut -d '.' -f 1-2)
 
 case $VERSION in
     testing)
-		URL=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/$VENDOR:/$DEVICE:/$RELEASE/sailfish_${RELEASE}_$PORT_ARCH/
+		URL=http://repo.sailfishos.org/obs/nemo:/testing:/hw:/$VENDOR:/$DEVICE:/$RELEASEMAJMIN/sailfishos_${RELEASEMAJMIN}_$PORT_ARCH/
 		;;
     devel)
 		URL=http://repo.sailfishos.org/obs/nemo:/devel:/hw:/$VENDOR:/$DEVICE/sailfish_latest_$PORT_ARCH
